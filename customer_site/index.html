@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Acme Engineering Blog — Second Origin Demo</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: #f1f5f9;
+      color: #1e293b;
+      line-height: 1.6;
+    }
+    header {
+      background-color: #0f172a;
+      color: #ffffff;
+      padding: 1.5rem 2rem;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    }
+    .header-content {
+      max-width: 900px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo {
+      font-weight: 800;
+      font-size: 1.25rem;
+      letter-spacing: -0.5px;
+    }
+    .badge {
+      background-color: #2563eb;
+      font-size: 0.75rem;
+      padding: 0.25rem 0.6rem;
+      border-radius: 9999px;
+      font-weight: 600;
+    }
+    main {
+      max-width: 860px;
+      margin: 2.5rem auto;
+      padding: 0 1.5rem;
+    }
+    .article-card {
+      background: #ffffff;
+      padding: 2.5rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+      margin-bottom: 2rem;
+    }
+    h1 {
+      font-size: 2rem;
+      margin-top: 0;
+      color: #0f172a;
+      letter-spacing: -0.5px;
+    }
+    .meta {
+      color: #64748b;
+      font-size: 0.88rem;
+      margin-bottom: 1.5rem;
+    }
+    .callout {
+      background-color: #eff6ff;
+      border-left: 4px solid #2563eb;
+      padding: 1rem 1.25rem;
+      border-radius: 0 8px 8px 0;
+      margin: 1.5rem 0;
+      font-size: 0.95rem;
+      color: #1e40af;
+    }
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      color: #94a3b8;
+      font-size: 0.85rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="header-content">
+      <div class="logo">⚡ Acme Tech Journal</div>
+      <div class="badge">Simulated Customer Site (Origin B)</div>
+    </div>
+  </header>
+
+  <main>
+    <article class="article-card">
+      <h1>Architecting High-Throughput Lead Capture at FlyRank</h1>
+      <div class="meta">By Staff Infrastructure Engineer • Published October 2026 • 6 min read</div>
+      
+      <p>
+        Building embeddable widgets requires extreme attention to detail: static assets must be cached immutably at the edge,
+        form configurations must deliver sub-10ms response times, and public submission endpoints must withstand rapid bursts,
+        spambot scrapers, and third-party service outages.
+      </p>
+
+      <div class="callout">
+        <strong>Cross-Origin Verification:</strong> This HTML page simulates a third-party customer domain embedding a FlyRank widget via a single script tag below.
+      </div>
+
+      <p>
+        Subscribe below to get our weekly deep dives into distributed architectures, rate limiting, and zero-downtime migrations.
+      </p>
+
+      <!-- FLYRANK EMBEDDABLE WIDGET SNIPPET -->
+      <script src="http://localhost:8000/static/widget.v1.js?id=wid_demo_signup"></script>
+      <!-- END FLYRANK EMBEDDABLE WIDGET SNIPPET -->
+
+      <p style="margin-top: 2rem; color: #64748b; font-size: 0.9rem;">
+        Notice how the widget dynamically configures itself, validates form boundaries, catches automated spambots with hidden honeypot fields, and safely handles network traffic.
+      </p>
+    </article>
+  </main>
+
+  <footer>
+    &copy; 2026 Acme Corp. Powered by FlyRank Embeddable Widget Platform.
+  </footer>
+</body>
+</html>
