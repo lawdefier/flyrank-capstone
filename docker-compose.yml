@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  web:
+    build: .
+    container_name: flyrank_widget_platform
+    ports:
+      - "8000:8000"
+    environment:
+      - PORT=8000
+      - ENVIRONMENT=production
+      - DATABASE_URL=sqlite:///./platform.db
+      - RATE_LIMIT_PER_MINUTE=20
+      - RATE_LIMIT_BURST=5
+    volumes:
+      - ./platform.db:/app/platform.db
+    restart: unless-stopped
