@@ -1,0 +1,67 @@
+# FlyRank Capstone Platform Manifest
+# Used by automated evaluators and benchmark harnesses
+
+version: "1.0.0"
+title: "FlyRank Embeddable Widget & Lead-Capture Platform"
+author: "FlyRank Engineering Intern"
+language: "python"
+framework: "fastapi"
+
+commands:
+  run: "uvicorn src.main:app --host 0.0.0.0 --port 8000"
+  seed: "python -m src.seed"
+  test: "python -m pytest -v"
+
+urls:
+  base_url: "http://localhost:8000"
+  health: "http://localhost:8000/health"
+  embed_script: "http://localhost:8000/static/widget.v1.js"
+  customer_site: "customer_site/index.html"
+
+auth:
+  type: "api_key"
+  header: "X-API-Key"
+  bearer_supported: true
+  demo_accounts:
+    tenant_a:
+      id: "tenant_a"
+      api_key: "key_tenant_a_123"
+      name: "Acme Corp"
+    tenant_b:
+      id: "tenant_b"
+      api_key: "key_tenant_b_456"
+      name: "Beta Industries"
+
+endpoints:
+  health:
+    method: "GET"
+    path: "/health"
+    auth_required: false
+  widget_script:
+    method: "GET"
+    path: "/static/widget.v1.js"
+    auth_required: false
+  widget_config:
+    method: "GET"
+    path: "/widgets/{id}/config"
+    auth_required: false
+  public_submission:
+    method: "POST"
+    path: "/submissions"
+    auth_required: false
+  admin_widgets:
+    method: "GET"
+    path: "/widgets"
+    auth_required: true
+  dashboard_stats:
+    method: "GET"
+    path: "/dashboard/stats"
+    auth_required: true
+
+probes:
+  probe_1: "test_probe_1_valid_submission_cross_origin_and_dashboard"
+  probe_2: "test_probe_2_malformed_and_oversized_payloads"
+  probe_3: "test_probe_3_rapid_burst_rate_limiting"
+  probe_4: "test_probe_4_geo_fallback_chain"
+  probe_5: "test_probe_5_side_effect_failure_containment"
+  probe_6: "test_probe_6_honeypot_spam_trap"
