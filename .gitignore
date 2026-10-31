@@ -1,0 +1,16 @@
+# Python artifacts
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+.venv/
+venv/
+
+# Environment secrets (Strictly ignored)
+.env
+
+# Local SQLite databases (created via seed/run)
+*.db
+
+# System artifacts
+.DS_Store
